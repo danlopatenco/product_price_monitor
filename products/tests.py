@@ -6,7 +6,7 @@ from rest_framework import status
 from rest_framework.test import APITestCase, APIClient
 from .models import Product, Price
 from decimal import Decimal
-from urllib.parse import urlencode
+
 
 class ProductTestCase(TestCase):
     def setUp(self):

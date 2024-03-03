@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1@xvbaslegv47#*9k$=a!5#dhf0)!c^c(%uq7-6kkw-9j0c4@+'
 
 
-DEBUG = get_bool_env_var("IS_DEV_MODE")
+DEBUG = get_bool_env_var("IS_DEV_MODE", True)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -87,6 +87,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+ALLOWED_HOSTS = ['dev.dlopatenco.com']
 
 LANGUAGE_CODE = 'en-us'
 

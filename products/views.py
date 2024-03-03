@@ -1,11 +1,8 @@
-from datetime import datetime, date
-from django.db.models import Avg, F, Sum, Count, ExpressionWrapper, fields
-from django.utils import timezone
-from django.db.models.functions import Coalesce
-from django.db.models import Max, Min, Q
+from datetime import datetime
+from django.db.models import Q
 from rest_framework import viewsets, permissions
 from rest_framework.response import Response
-from rest_framework.decorators import  action
+from rest_framework.decorators import action
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from django.shortcuts import get_object_or_404
@@ -33,6 +30,7 @@ class ProductViewSet(viewsets.ModelViewSet):
             "current_price": current_price,
             "price_history": price_history
         })
+
 
 class PriceViewSet(viewsets.ModelViewSet):
     queryset = Price.objects.all()
@@ -88,4 +86,3 @@ class PriceViewSet(viewsets.ModelViewSet):
             return Response({"average_price": round(average_price, 2)})
         else:
             return Response({"error": "No prices found in the given date range."}, status=400)
-
