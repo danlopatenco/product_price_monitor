@@ -12,6 +12,10 @@ from .serializers import ProductSerializer, PriceSerializer
 
 
 class ProductViewSet(viewsets.ModelViewSet):
+    """
+    This viewset automatically provides `list`, `create`, `retrieve`, `update` and `destroy` actions.
+    Additionally, it provides a custom `detailed_info` action.
+    """
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     permission_classes = [permissions.IsAuthenticated]
@@ -33,6 +37,10 @@ class ProductViewSet(viewsets.ModelViewSet):
 
 
 class PriceViewSet(viewsets.ModelViewSet):
+    """
+    This viewset automatically provides `list`, `create`, `retrieve`, `update` and `destroy` actions.
+    Additionally, it provides a custom `average_price` action.
+    """
     queryset = Price.objects.all()
     serializer_class = PriceSerializer
     permission_classes = [permissions.IsAuthenticated]
@@ -54,6 +62,7 @@ class PriceViewSet(viewsets.ModelViewSet):
     def average_price(self, request, pk=None):
         from_date_str = request.query_params.get('from_date')
         to_date_str = request.query_params.get('to_date')
+        
         try:
             from_date = datetime.strptime(from_date_str, '%Y-%m-%d').date() if from_date_str else None
             to_date = datetime.strptime(to_date_str, '%Y-%m-%d').date() if to_date_str else None

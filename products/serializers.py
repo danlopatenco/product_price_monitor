@@ -4,6 +4,10 @@ from django.utils.timezone import now
 
 
 class ProductSerializer(serializers.ModelSerializer):
+    """
+    This serializer is used to serialize and deserialize the Product model.
+    """
+
     initial_price = serializers.DecimalField(max_digits=10,
                                              decimal_places=2,
                                              write_only=True,
@@ -22,6 +26,10 @@ class ProductSerializer(serializers.ModelSerializer):
 
 
 class PriceSerializer(serializers.ModelSerializer):
+    """
+    This serializer is used to serialize and deserialize the Price model.
+    """
+
     class Meta:
         model = Price
         fields = ['id', 'product', 'price', 'start_date', 'end_date']

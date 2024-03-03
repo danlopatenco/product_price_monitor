@@ -8,4 +8,5 @@ class ProductAdmin(admin.ModelAdmin):
         model = Product
         fields = '__all__'
 
+
 admin.site.register(Price)
