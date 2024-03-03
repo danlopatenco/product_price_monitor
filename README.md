@@ -1,6 +1,15 @@
 # Introduction
 Product Price Tracker is a Django application designed to monitor and analyze the fluctuating prices of products in the market. Users can add products, update their prices for any period, including indefinite future pricing, and modify past prices as needed. The application calculates and displays the average price of a product for a specified period, providing valuable insights into market trends and aiding in strategic decision-making.
 
+
+## Environment Setup
+
+Before running the application, you need to set up your environment variables. Follow these steps:
+
+1. Create a `.env` file in the root directory of the project.
+2. Copy the contents from `.env.example` into your `.env` file.
+3. Replace the placeholder values in `.env` with your actual configuration values.
+
 ## Installation
 
 Choose the installation method that best fits your needs:

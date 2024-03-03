@@ -21,4 +21,4 @@ Note: Docker Compose will handle the installation of dependencies, environment s
 ## Execute Tests
 
 Run `docker-compose exec app python manage.py test` test to execute the tests.
-Here, web is the name of the Docker service running your Django application. Adjust this service name based on your docker-compose.yml configuration.
+Here, `app` is the name of the Docker service running your Django application. Adjust this service name based on your docker-compose.yml configuration.
